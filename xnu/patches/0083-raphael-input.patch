@@ -47,7 +47,7 @@ index 03defe6..84a50af 100644
 +#define TOUCH_NORTH_PA   0x03000000u
 +#define TOUCH_GCC_VOTE   0x52014u
 +#define TOUCH_RCG       0x1e2c8u    /* wrap2_s0 cmd_rcgr (SE17) */
-+#define TOUCH_VOTE_MASK ((1u << 1) | (1u << 2) | (1u << 4)) /* s_ahb|m_ahb|s2 */
++#define TOUCH_VOTE_MASK ((1u << 1) | (1u << 2) | (1u << 4)) /* s_ahb|m_ahb|s0 */
 +#define TOUCH_GPIO_RESET 12u
 +#define TOUCH_GPIO_IRQ   122u
 +#define TOUCH_GPIO_VDD   12u         /* 3v3 rail enable, output high */
