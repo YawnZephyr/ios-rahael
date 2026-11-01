@@ -130,5 +130,5 @@ diff --git a/bsd/dev/sweet_touch.c b/bsd/dev/sweet_touch.c
 @@ -320,3 +443,4 @@
  touch_se_init(void)
  {
-+	ceph_geni_load_i2c_fw();
-	uint32_t fw = touch_rd(st.se, SE_FW);
++        ceph_geni_load_i2c_fw();
+         uint32_t fw = touch_rd(st.se, SE_FW);
