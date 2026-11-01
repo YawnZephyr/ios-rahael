@@ -19,14 +19,14 @@ index 98d82d0..7929dc7 100644
   * (GCC_QUPV3_WRAP2_S2: vote BIT(6)@0x52014, RCG 0x1e3a8). Power via TLMM
   * GPIOs per raphael-sm8150.dtsi: vdd 3v3 = GPIO98, avdd 1v8 = GPIO100,
   * reset = GPIO54, IRQ = GPIO122, SDA/SCL = GPIO57/58 (qup19). */
- #define TOUCH_SE_PA      0x00c88000u
+ #define TOUCH_SE_PA      0x00c80000u
  #define TOUCH_GCC_PA     0x00100000u
 -#define TOUCH_NORTH_PA   0x03000000u
 +/* 0x80000 covers global ids 0..127: gpio122 IN_OUT ends at 0x7a004. */
 +#define TOUCH_GPIO_PA    0x03D00000u
  #define TOUCH_GCC_VOTE   0x52014u
- #define TOUCH_RCG       0x1e3a8u    /* wrap2_s2 cmd_rcgr (SE19) */
- #define TOUCH_VOTE_MASK ((1u << 1) | (1u << 2) | (1u << 6)) /* s_ahb|m_ahb|s2 */
+ #define TOUCH_RCG       0x1e2c8u    /* wrap2_s0 cmd_rcgr (SE17) */
+ #define TOUCH_VOTE_MASK ((1u << 1) | (1u << 2) | (1u << 4)) /* s_ahb|m_ahb|s0 */
 @@ -47,7 +56,7 @@ void sweet_touch_init(void);
  #else
  #define TOUCH_SE_PA      0x00a84000u
